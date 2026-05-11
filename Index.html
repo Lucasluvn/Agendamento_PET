@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agenda Vet - Tema Azul</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+
+  <div class="agenda-container">
+    <header class="page-header">
+      <h1>Agenda de Atendimentos</h1>
+      <p>Gerencie os agendamentos do dia</p>
+    </header>
+
+    <!-- SEÇÃO DA MANHÃ -->
+    <section class="period-section">
+      <div class="period-header">
+        <div class="period-title">
+          <i class="ph ph-sun theme-icon"></i>
+          <h2>Manhã</h2>
+        </div>
+        <span class="period-time">08:00 - 12:00</span>
+      </div>
+
+      <ul class="schedule-list">
+        <li class="schedule-item">
+          <div class="schedule-time">09:00</div>
+          <div class="schedule-info">
+            <strong class="animal-name">Rex (Golden Retriever)</strong>
+            <span class="tutor-name"><i class="ph ph-user theme-icon"></i> Tutor: João Silva</span>
+            <span class="service-desc"><i class="ph ph-stethoscope theme-icon"></i> Consulta de rotina e vacina</span>
+          </div>
+          <button class="delete-btn" title="Apagar agendamento">
+            <i class="ph ph-trash"></i>
+          </button>
+        </li>
+
+        <li class="schedule-item">
+          <div class="schedule-time">10:30</div>
+          <div class="schedule-info">
+            <strong class="animal-name">Mimi (Gato Persa)</strong>
+            <span class="tutor-name"><i class="ph ph-user theme-icon"></i> Tutor: Ana Clara</span>
+            <span class="service-desc"><i class="ph ph-scissors theme-icon"></i> Banho e Tosa</span>
+          </div>
+          <button class="delete-btn" title="Apagar agendamento">
+            <i class="ph ph-trash"></i>
+          </button>
+        </li>
+      </ul>
+    </section>
+
+    <!-- SEÇÃO DA TARDE -->
+    <section class="period-section">
+      <div class="period-header">
+        <div class="period-title">
+          <i class="ph ph-cloud-sun theme-icon"></i>
+          <h2>Tarde</h2>
+        </div>
+        <span class="period-time">13:00 - 18:00</span>
+      </div>
+
+      <ul class="schedule-list">
+        <li class="schedule-item">
+          <div class="schedule-time">14:00</div>
+          <div class="schedule-info">
+            <strong class="animal-name">Thor (Bulldog)</strong>
+            <span class="tutor-name"><i class="ph ph-user theme-icon"></i> Tutor: Carlos Mendes</span>
+            <span class="service-desc"><i class="ph ph-first-aid theme-icon"></i> Curativo</span>
+          </div>
+          <button class="delete-btn" title="Apagar agendamento">
+            <i class="ph ph-trash"></i>
+          </button>
+        </li>
+      </ul>
+    </section>
+
+  </div>
+<script src="script.js"></script>
+</body>
+</html>
