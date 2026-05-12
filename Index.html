@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agenda Vet - Tema Azul</title>
+  <title>Agenda Vet </title>
   <link rel="stylesheet" href="style.css">
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
-
 
   <div class="agenda-container">
     <header class="page-header">
@@ -16,7 +15,41 @@
       <p>Gerencie os agendamentos do dia</p>
     </header>
 
-     SEÇÃO DA MANHÃ 
+    <!-- FORMULÁRIO DE CADASTRO -->
+    <section class="form-section">
+      <form id="schedule-form">
+        
+        <!-- Nome do Pet -->
+        <div class="input-wrapper">
+          <label for="pet">Nome do pet</label>
+          <input type="text" id="pet" name="pet" placeholder="Ex: Rex" required>
+        </div>
+
+        <!-- Nome do Tutor -->
+        <div class="input-wrapper">
+          <label for="tutor">Tutor</label>
+          <input type="text" id="tutor" name="tutor" placeholder="Ex: João Silva" required>
+        </div>
+
+        <!-- Descrição do Serviço -->
+        <div class="input-wrapper">
+          <label for="description">Serviço</label>
+          <input type="text" id="description" name="description" placeholder="Ex: Consulta de rotina" required>
+        </div>
+
+        <!-- Horário -->
+        <div class="input-wrapper">
+          <label for="time">Horário</label>
+          <input type="time" id="time" name="time" required>
+        </div>
+
+        <button type="submit" id="add-button">
+          <i class="ph ph-plus"></i> Agendar
+        </button>
+      </form>
+    </section>
+
+    <!-- SEÇÃO DA MANHÃ -->
     <section class="period-section">
       <div class="period-header">
         <div class="period-title">
@@ -26,35 +59,12 @@
         <span class="period-time">08:00 - 12:00</span>
       </div>
 
-      <ul class="schedule-list">
-       <!-- <li class="schedule-item">
-          <div class="schedule-time">09:00</div>
-          <div class="schedule-info">
-            <strong class="animal-name">Rex (Golden Retriever)</strong>
-            <span class="tutor-name"><i class="ph ph-user theme-icon"></i> Tutor: João Silva</span>
-            <span class="service-desc"><i class="ph ph-stethoscope theme-icon"></i> Consulta de rotina e vacina</span>
-          </div> 
-          <button class="delete-btn" title="Apagar agendamento">
-            <i class="ph ph-trash"></i> 
-          </button> 
-          </button> 
-        </li> -->
-
-      <!--  <li class="schedule-item">
-          <div class="schedule-time">10:30</div>
-          <div class="schedule-info">
-            <strong class="animal-name">Mimi (Gato Persa)</strong>
-            <span class="tutor-name"><i class="ph ph-user theme-icon"></i> Tutor: Ana Clara</span>
-            <span class="service-desc"><i class="ph ph-scissors theme-icon"></i> Banho e Tosa</span>
-          </div> 
-          <button class="delete-btn" title="Apagar agendamento">
-            <i class="ph ph-trash"></i>
-          </button>
-        </li> -->
+      <ul id="schedule-morning" class="schedule-list">
+        <!-- Agendamentos via JS -->
       </ul>
     </section>
 
-      SEÇÃO DA TARDE
+    <!-- SEÇÃO DA TARDE -->
     <section class="period-section">
       <div class="period-header">
         <div class="period-title">
@@ -64,22 +74,13 @@
         <span class="period-time">13:00 - 18:00</span>
       </div>
 
-      <ul class="schedule-list">
-      <!--  <li class="schedule-item">
-          <div class="schedule-time">14:00</div>
-          <div class="schedule-info">
-            <strong class="animal-name">Thor (Bulldog)</strong>
-            <span class="tutor-name"><i class="ph ph-user theme-icon"></i> Tutor: Carlos Mendes</span>
-            <span class="service-desc"><i class="ph ph-first-aid theme-icon"></i> Curativo</span>
-          </div> 
-          <button class="delete-btn" title="Apagar agendamento">
-            <i class="ph ph-trash"></i>
-          </button>
-        </li> -->
+      <ul id="schedule-afternoon" class="schedule-list">
+        <!-- Agendamentos via JS -->
       </ul>
     </section>
 
-  </div>
-<script src="script.js"></script>
+  </div> <!-- Fim da agenda-container -->
+
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,4 +1,14 @@
-/* Reset básico e Fontes */
+/* Configurações Globais */
+:root {
+  --primary-blue: #007bff;
+  --dark-blue: #0056b3;
+  --bg-color: #f4f7f9;
+  --card-bg: #ffffff;
+  --text-main: #333333;
+  --text-muted: #666666;
+  --border-color: #e1e8ed;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,151 +17,128 @@
 }
 
 body {
-  background-color: #ffffff; /* Fundo totalmente branco */
-  color: #1f2937;
-  padding: 2rem;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
 }
 
-/* Container Principal */
 .agenda-container {
-  max-width: 800px;
-  margin: 0 auto;
+  background-color: var(--card-bg);
+  width: 100%;
+  max-width: 600px;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
+/* Header */
 .page-header {
-  margin-bottom: 2rem;
-  text-align: center;
+  margin-bottom: 32px;
+  border-bottom: 2px solid var(--bg-color);
+  padding-bottom: 16px;
 }
 
 .page-header h1 {
-  font-size: 2rem;
-  color: #00A1FF; /* Azul principal no título */
+  font-size: 24px;
+  color: var(--primary-blue);
 }
 
 .page-header p {
-  color: #6b7280;
-  margin-top: 0.5rem;
+  color: var(--text-muted);
+  font-size: 14px;
 }
 
-/* Seções de Período (Manhã, Tarde, Noite) */
-.period-section {
-  background-color: #ffffff;
+/* Formulário Bonitão */
+.form-section {
+  background-color: #f8faff;
+  padding: 20px;
   border-radius: 12px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  border: 1px solid rgba(0, 161, 255, 0.2); /* Bordinha bem suave com o seu azul */
-  box-shadow: 0 4px 10px rgba(0, 161, 255, 0.05); /* Sombra bem leve puxada pro azul */
+  border: 1px solid #d0e3ff;
+  margin-bottom: 32px;
+}
+
+.input-wrapper {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-wrapper label {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.input-wrapper input {
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.2s;
+}
+
+.input-wrapper input:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+#add-button {
+  width: 100%;
+  padding: 14px;
+  background-color: var(--primary-blue);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#add-button:hover {
+  background-color: var(--dark-blue);
+}
+
+/* Seções de Período */
+.period-section {
+  margin-bottom: 24px;
 }
 
 .period-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(0, 161, 255, 0.2);
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
 }
 
 .period-title {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 8px;
+  color: var(--primary-blue);
 }
 
-.period-title h2 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #111827;
+.theme-icon {
+  font-size: 20px;
 }
 
 .period-time {
-  background-color: rgba(0, 161, 255, 0.1); /* Fundo clarinho com seu azul */
-  padding: 0.25rem 0.75rem;
-  border-radius: 999px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #00A1FF;
+  font-size: 12px;
+  background: #eee;
+  padding: 4px 8px;
+  border-radius: 20px;
+  color: var(--text-muted);
 }
 
-/* Cor Padrão dos Ícones */
-.theme-icon { 
-  color: #00A1FF; 
-  font-size: 1.25rem;
-}
-
-.period-title .theme-icon {
-  font-size: 1.5rem;
-}
-
-/* Lista de Agendamentos */
 .schedule-list {
   list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.schedule-item {
-  display: flex;
-  align-items: center;
-  background-color: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  padding: 1rem;
-  transition: all 0.2s;
-}
-
-.schedule-item:hover {
-  transform: translateX(4px);
-  border-color: #00A1FF; /* Borda fica azul ao passar o mouse */
-  box-shadow: 0 2px 8px rgba(0, 161, 255, 0.1);
-}
-
-/* Horário do lado esquerdo */
-.schedule-time {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #00A1FF; /* O seu azul nos horários */
-  padding-right: 1.5rem;
-  border-right: 2px solid rgba(0, 161, 255, 0.2);
-  margin-right: 1.5rem;
-}
-
-/* Informações do Agendamento */
-.schedule-info {
-  flex: 1; /* Ocupa todo o espaço do meio */
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.animal-name {
-  font-size: 1.1rem;
-  color: #111827;
-}
-
-.tutor-name, .service-desc {
-  font-size: 0.875rem;
-  color: #6b7280;
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-}
-
-/* Botão de Apagar */
-.delete-btn {
-  background: none;
-  border: none;
-  color: #9ca3af; /* Cinza clarinho padrão */
-  font-size: 1.5rem;
-  cursor: pointer;
-  padding: 0.5rem;
-  border-radius: 8px;
-  transition: all 0.2s;
-}
-
-/* Ao passar o mouse na lixeira, ela fica vermelha pra dar sinal de "apagar" */
-.delete-btn:hover {
-  background-color: #fee2e2;
-  color: #ef4444; 
 }
