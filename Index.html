@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agenda Vet </title>
+  
   <link rel="stylesheet" href="style.css">
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
@@ -22,25 +23,25 @@
         <!-- Nome do Pet -->
         <div class="input-wrapper">
           <label for="pet">Nome do pet</label>
-          <input type="text" id="pet" name="pet" placeholder="Ex: Rex" required>
+          <input type="text" id="pet" name="pet" placeholder="" required>
         </div>
 
         <!-- Nome do Tutor -->
         <div class="input-wrapper">
           <label for="tutor">Tutor</label>
-          <input type="text" id="tutor" name="tutor" placeholder="Ex: João Silva" required>
+          <input type="text" id="tutor" name="tutor" placeholder="" required>
         </div>
 
         <!-- Descrição do Serviço -->
         <div class="input-wrapper">
           <label for="description">Serviço</label>
-          <input type="text" id="description" name="description" placeholder="Ex: Consulta de rotina" required>
+          <input type="text" id="description" name="description" placeholder="" required>
         </div>
 
         <!-- Horário -->
         <div class="input-wrapper">
           <label for="time">Horário</label>
-          <input type="time" id="time" name="time" required>
+          <input type="text" id="time" name="time" placeholder="00:00" required>
         </div>
 
         <button type="submit" id="add-button">
@@ -80,7 +81,7 @@
     </section>
 
   </div> <!-- Fim da agenda-container -->
+<script type = "module" src="script.js"></script>
 
-  <script src="script.js"></script>
 </body>
 </html>

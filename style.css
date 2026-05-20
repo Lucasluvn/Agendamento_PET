@@ -142,3 +142,43 @@ body {
 .schedule-list {
   list-style: none;
 }
+/* Estilo do Card de Agendamento */
+.schedule-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-bottom: 1px solid var(--border-color);
+  transition: background 0.2s;
+}
+
+.schedule-item:hover {
+  background-color: #fcfcfc;
+}
+
+.schedule-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Botão de Remover */
+.remove-icon {
+  background: transparent;
+  border: none;
+  color: #ff4d4d; /* Vermelho */
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.remove-icon:hover {
+  background-color: #fff0f0;
+  text-decoration: underline;
+}

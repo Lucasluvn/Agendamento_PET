@@ -1,54 +1,74 @@
-//pega o campo do nome do pet, tutor, tipo de agendamento do pet e o horario (global)
-const petInput = document.getElementById("pet")
-const tutorInput = document.getElementById("tutor")
-const descriptionInput = document.getElementById("description")
-const timeSchedule = document.getElementById("time")
-const scheduleMorinig = document.getElementById("schedule-morning")
-const scheduleAfternoon = document.getElementById("schedule-afternoon")
+import { addSchedule } from "./schedules.js";
 
-// Cria o "gatilho" para ativar os inputs "petname","tutot name" e "servive description"
-const formSchedule = document.getElementById("schedule-form")
-formSchedule.onsubmit = (event)  => {
- const petName = petInput.value 
- const tutorName = tutorInput.value
- const descriptionName = descriptionInput.value
- const timeInput = timeSchedule.value
- 
- if(timeInput >= "8:00" && timeInput <= "12:00") {
-  console.log("O HORARIO DA MANHA")
- } else if (timeInput >=  "13:00" && timeInput <= "18:00"){ 
-  console.log("O HORARIO DA TARDE")
- } else {
-  console.log("horario fora do expediente")
- }
+"use strict"
+// Pega o campo do nome do pet, tutor, tipo de agendamento do pet e o horario (global)
+const petInput = document.getElementById("pet");
+const tutorInput = document.getElementById("tutor");
+const descriptionInput = document.getElementById("description");
+const timeSchedule = document.getElementById("time"); // Centralizado como timeSchedule
 
+// Seleciona as listas de agendamento (Manhã e Tarde)
+export const scheduleMorning = document.getElementById("schedule-morning");
+export const scheduleAfternoon = document.getElementById("schedule-afternoon");
 
-// Previne o envio de formulario constante 
-  event.preventDefault()
+// Cria o "gatilho" para ativar os inputs "petname", "tutor name" e "service description"
+const formSchedule = document.getElementById("schedule-form");
+
+formSchedule.onsubmit = (event) => {
+    // Previne o envio de formulario constante 
+    event.preventDefault();
+
+    const petName = petInput.value;
+    const tutorName = tutorInput.value;
+    const descriptionName = descriptionInput.value;
+    const timeInput = timeSchedule.value;
+
+    //  Checa se está aberto 
+    if (timeInput >= "08:00" && timeInput <= "18:00") {
+    //  decide em qual lista colocar (O "Filtro")
+    if (timeInput < "13:00") {
+    addSchedule(petName, tutorName, descriptionName, timeInput,scheduleMorning);
+    console.log("Horario agendado pela manhã");
+    // Aqui você chamará sua função de criar o HTML na lista de manhã
+} else {
+    addSchedule(petName, tutorName, descriptionName, timeInput,scheduleAfternoon);
+    console.log("Horario agendado pela tarde");
+    // Aqui você chamará sua função de criar o HTML na lista de tarde
 }
+// Limpa o formulário após o sucesso
+formSchedule.reset();
+} else {
+alert("Opa! Só atendemos das 08:00 às 18:00.");
+}
+};
+
 // formatando a hora do input "horario"
-const timeHorario = new Date();
-console.log(timeHorario.toDateString("pt-Br"))
+// Usamos o evento "input" para que a máscara funcione enquanto o usuário digita
+timeSchedule.addEventListener("input", () => {
+// Pega o valor e limpa (deixando só números) 
+// Usamos .replace(/\D/g, "") para dizer: "o que não for número, vira vazio"
+let newtimeFormated = timeSchedule.value.replace(/\D/g, "");
 
-const timeFormated = document.getElementById("time")
-timeFormated.addEventListener("input",function () {
-  // Pega o valor e limpa (deixando só números) e Usamos .replace(/\D/g, "") para dizer: "o que não for número, vira vazio"
-           
-let newtimeFormated = timeFormated.value.replace(/\D/g, "")
-
-//  Se o usuário já digitou 3 números ou mais, o texto é "furado" o texto e põe o ":"
+// Se o usuário já digitou 3 números ou mais, o texto é "furado" e põe o ":"
 if (newtimeFormated.length > 2) {
-  //  Pegamos os 2 primeiros + ":" + o resto (até o 4º número)
-  newtimeFormated = newtimeFormated.slice(0,2) + ":" + newtimeFormated.slice(2,4)
-  
+// Pegamos os 2 primeiros + ":" + o resto (até o 4º número)
+newtimeFormated = newtimeFormated.slice(0, 2) + ":" + newtimeFormated.slice(2, 4);
 }
+
 // Devolvemos o valor arrumado para a tela
-timeFormated.value = newtimeFormated
+timeSchedule.value = newtimeFormated;
 });
 
+// Comando para fazer o JS monitorar os cliques nos horarios agendados e Usamos querySelectorAll para pegar todas as listas (manhã e tarde)
+const scheduleLists = document.querySelectorAll(".schedule-list");
 
-// Comando para fazer o JS monitorar os cliques nso horarios agendados
-const scheduleList = document.querySelector(".schedule-list");
-scheduleList.addEventListener("click",() =>{
-  console.log("botão clicado");
+scheduleLists.forEach((list) => {
+list.addEventListener("click", (event) => {
+// Verificamos se o clique foi no ícone de remover (ajuste a classe se necessário)
+
+if (event.target.classList.contains("remove-icon")) {
+console.log("botão clicado");
+// Lógica para remover o agendamento
+}
+});
 });
