@@ -45,8 +45,7 @@ alert("Opa! Só atendemos das 08:00 às 18:00.");
 // formatando a hora do input "horario"
 // Usamos o evento "input" para que a máscara funcione enquanto o usuário digita
 timeSchedule.addEventListener("input", () => {
-// Pega o valor e limpa (deixando só números) 
-// Usamos .replace(/\D/g, "") para dizer: "o que não for número, vira vazio"
+// Pega o valor e limpa (deixando só números),Usamos .replace(/\D/g, "") para dizer: "o que não for número, vira vazio"
 let newtimeFormated = timeSchedule.value.replace(/\D/g, "");
 
 // Se o usuário já digitou 3 números ou mais, o texto é "furado" e põe o ":"
@@ -64,11 +63,16 @@ const scheduleLists = document.querySelectorAll(".schedule-list");
 
 scheduleLists.forEach((list) => {
 list.addEventListener("click", (event) => {
-// Verificamos se o clique foi no ícone de remover (ajuste a classe se necessário)
+// Verifica se o clique foi no ícone de remover 
 
 if (event.target.classList.contains("remove-icon")) {
 console.log("botão clicado");
-// Lógica para remover o agendamento
+// Lógica para adicionar função no botão de remover o agendamento
+const removeappointment = event.target.closest("li")
+ // Remove o elemento <li> do HTML se ele existir
+ if (removeappointment){
+    removeappointment.remove()
+ }
 }
 });
 });
