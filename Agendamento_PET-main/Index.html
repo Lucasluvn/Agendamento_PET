@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agenda Vet </title>
+  
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+  <div class="agenda-container">
+    <header class="page-header">
+      <h1>Agenda de Atendimentos do Dia</h1>
+      <p>Gerencie os agendamentos do dia</p>
+    </header>
+
+    <!-- FORMULÁRIO DE CADASTRO -->
+    <section class="form-section">
+      <form id="schedule-form">
+        
+        <!-- Nome do Pet -->
+        <div class="input-wrapper">
+          <label for="pet">Nome do pet</label>
+          <input type="text" id="pet" name="pet" placeholder="" required>
+        </div>
+
+        <!-- Nome do Tutor -->
+        <div class="input-wrapper">
+          <label for="tutor">Tutor</label>
+          <input type="text" id="tutor" name="tutor" placeholder="" required>
+        </div>
+
+        <!-- Descrição do Serviço -->
+        <div class="input-wrapper">
+          <label for="description">Serviço</label>
+          <input type="text" id="description" name="description" placeholder="" required>
+        </div>
+
+        <!-- Horário -->
+        <div class="input-wrapper">
+          <label for="time">Horário</label>
+          <input type="text" id="time" name="time" placeholder="00:00" required>
+        </div>
+
+        <button type="submit" id="add-button">
+          <i class="ph ph-plus"></i> Agendar
+        </button>
+      </form>
+    </section>
+
+    <!-- SEÇÃO DA MANHÃ -->
+    <section class="period-section">
+      <div class="period-header">
+        <div class="period-title">
+          <i class="ph ph-sun theme-icon"></i>
+          <h2>Manhã</h2>
+        </div>
+        <span class="period-time">08:00 - 12:00</span>
+      </div>
+
+      <ul id="schedule-morning" class="schedule-list">
+        <!-- Agendamentos via JS -->
+      </ul>
+    </section>
+
+    <!-- SEÇÃO DA TARDE -->
+    <section class="period-section">
+      <div class="period-header">
+        <div class="period-title">
+          <i class="ph ph-cloud-sun theme-icon"></i>
+          <h2>Tarde</h2>
+        </div>
+        <span class="period-time">13:00 - 18:00</span>
+      </div>
+
+      <ul id="schedule-afternoon" class="schedule-list">
+        <!-- Agendamentos via JS -->
+      </ul>
+    </section>
+
+  </div> <!-- Fim da agenda-container -->
+<script type = "module" src="script.js"></script>
+
+</body>
+</html>
