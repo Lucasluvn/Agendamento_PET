@@ -3,6 +3,7 @@ generator client {
   provider = "prisma-client-js"
 }
 
+//"liga" meu codigo "do prisma" ao meu banco de dados no supabase
 datasource db {
   provider = "postgresql"
   
@@ -29,7 +30,7 @@ agendamentos   Agendamento[]
 
 model Agendamento{
 id Int @id @default(autoincrement())
-Serviço String 
+Servico String 
 Horario String
 petId Int
 pet  Pet @relation(fields: [petId], references: [id])
