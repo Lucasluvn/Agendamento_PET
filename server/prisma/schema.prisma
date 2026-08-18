@@ -1,0 +1,37 @@
+//gera um código JavaScript/TypeScript que eu vou poder importar e usar no meu projeto, pra fazer consultas no banco". Quando você roda um comando específico do Prisma (npx prisma generate), ele lê esse bloco e cria uma "biblioteca" personalizada baseada exatamente nos seus models (Tutor, Pet, Agendamento) — depois, no seu server.ts ou em outros arquivos, você vai poder escrever código tipo prisma.tutor.create(...) pra criar um tutor novo, por exemplo. Esse código só existe porque esse bloco gerou ele.
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  
+}
+
+
+
+
+// Model cria o identificador de cada input do front end e os transforma em dados de tabela no banco de dados
+model Tutor {
+ id Int @id @default(autoincrement())
+ Nome String 
+ pets Pet[]
+}
+
+model Pet{
+id Int @id @default(autoincrement()) 
+Nome String 
+tutorId Int
+tutor Tutor @relation(fields: [tutorId], references: [id])
+agendamentos   Agendamento[]
+}
+
+
+model Agendamento{
+id Int @id @default(autoincrement())
+Serviço String 
+Horario String
+petId Int
+pet  Pet @relation(fields: [petId], references: [id])
+}
+
