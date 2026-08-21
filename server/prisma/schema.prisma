@@ -6,6 +6,7 @@ generator client {
 //"liga" meu codigo "do prisma" ao meu banco de dados no supabase
 datasource db {
   provider = "postgresql"
+
   
 }
 
