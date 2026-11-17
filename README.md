@@ -1,23 +1,36 @@
-# Agenda Pet
+# 🐾 Agenda Vet - Sistema de Agendamento Veterinário
 
-## Sobre o projeto
+Uma aplicação web desenvolvida para otimizar o gerenciamento e o agendamento de consultas e serviços em clínicas veterinárias, proporcionando uma experiência intuitiva e segura para os usuários.
 
-Aplicação web que simula o sistema de agendamentos de um pet shop, permitindo cadastrar tutores, pets e marcar consultas veterinárias com serviço e horário definidos.
+---
 
-Projeto desenvolvido integralmente por mim — front-end, back-end e conexão com banco de dados.
+## 🚀 Tecnologias Utilizadas
 
-## Tecnologias utilizadas
+O projeto foi construído utilizando as seguintes tecnologias e ferramentas:
 
-- TypeScript
-- JavaScript
-- Node.js
-- Express
-- Prisma (ORM)
-- PostgreSQL (via Supabase)
+* **Front-end:** 
+  * HTML5, CSS3 e JavaScript (ES6+)
+* **Validação de Dados:**
+  * [Zod](https://zod.dev/) (para validação rigorosa de esquemas e dados de formulários)
+* **Autenticação:**
+  * Fluxo de autenticação via **OAuth** para controle seguro de acessos.
+* **Controle de Versão:**
+  * Git & GitHub
 
-## Funcionalidades
+---
 
-- Cadastro de tutores, pets e agendamentos
-- Listagem de tutores, pets e agendamentos
-- Edição de dados de tutores, pets e agendamentos
-- Remoção de tutores, pets e agendamentos
+## 💡 Funcionalidades
+
+* **Agendamento de Consultas:** Interface amigável para marcação e acompanhamento de horários veterinários.
+* **Validação Robusta:** Garantia de integridade dos dados inseridos através de esquemas tipados com Zod.
+* **Autenticação Segura:** Gerenciamento de sessões e acessos de usuários via OAuth.
+
+---
+
+## ⚙️ Como Executar o Projeto Localmente
+
+Siga os passos abaixo para rodar o projeto na sua máquina:
+
+1. Clone este repositório:
+   ```bash
+   git clone [https://github.com/Lucasluvn/agenda-vet.git](https://github.com/Lucasluvn/agenda-vet.git)
